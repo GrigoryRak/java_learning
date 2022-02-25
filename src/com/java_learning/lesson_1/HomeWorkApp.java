@@ -26,9 +26,10 @@ public class HomeWorkApp {
     }
 
 //    В случае, когда значение более 100 описывать как "else if (value > 100)" смысла не имеет, т.к.
-//    мы уже имеем полный спект (диапазон) описания значений.
+//    мы уже имеем полный спект (диапазон) описания значений + во втором условии else if (value > 0 && value <= 100)
+//    мы говорим, что в выборку должны попасть значения строго > 0 и <= 100
     public static void printColor(){
-        int value = 101;
+        int value = 11;
         if (value <= 0) {
             System.out.println("Красный");
         } else if (value > 0 && value <= 100){
@@ -40,7 +41,7 @@ public class HomeWorkApp {
 
     public static void compareNumbers(){
         int a = 10;
-        int b = 5;
+        int b = 11;
 
         if (a >= b){
             System.out.println("a >= b");
