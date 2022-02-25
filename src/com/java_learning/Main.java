@@ -1,4 +1,4 @@
-package com.java_first_semester;
+package com.java_learning;
 
 public class Main {
 
