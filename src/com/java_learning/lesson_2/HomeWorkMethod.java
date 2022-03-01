@@ -3,10 +3,10 @@ package com.java_learning.lesson_2;
 import java.util.*;
 
 public class HomeWorkMethod {
+
+    static GregorianCalendar leapYear = new GregorianCalendar();
+
     public static void main(String[] args) {
-
-//        Date date = new Date();
-
         System.out.println("Сумма чисел a и b лежит в диапазоне от 10 до 20 (включительно) - " + checkSum(5,10));
         System.out.println();
         System.out.println(numberCheck(-5));
@@ -15,7 +15,7 @@ public class HomeWorkMethod {
         System.out.println();
         cycle("Проход по циклу - ", 7);
         System.out.println();
-        System.out.println(definitionLeapYear(2021));
+        System.out.println(definitionLeapYear(2032));
     }
 
     public static boolean checkSum(int a, int b){
@@ -45,7 +45,6 @@ public class HomeWorkMethod {
     }
 
     public static boolean definitionLeapYear(int year){
-        GregorianCalendar  leapYear = new GregorianCalendar();
         return leapYear.isLeapYear(year);
     }
 
