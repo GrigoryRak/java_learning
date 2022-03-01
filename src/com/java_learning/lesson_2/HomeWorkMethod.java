@@ -15,7 +15,8 @@ public class HomeWorkMethod {
         System.out.println();
         cycle("Проход по циклу - ", 7);
         System.out.println();
-        System.out.println(definitionLeapYear(2032));
+        int year = 2032;
+        System.out.println("Определяем тип " + year + " года. Год является високосным? Результат: " + definitionLeapYear(year));
     }
 
     public static boolean checkSum(int a, int b){
