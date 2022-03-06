@@ -9,7 +9,7 @@ public class HomeWorkMethod {
     public static void main(String[] args) {
         System.out.println("Сумма чисел a и b лежит в диапазоне от 10 до 20 (включительно) - " + checkSum(5,10));
         System.out.println();
-        System.out.println(numberCheck(-5));
+        numberCheck(-5);
         System.out.println();
         System.out.println("Верно ли, что введено отрицательное число? Результат: " + numberCheckBool(-1));
         System.out.println();
@@ -24,14 +24,12 @@ public class HomeWorkMethod {
         return summa >= 10 && summa <= 20;
     }
 
-    public static String numberCheck(int a){
-        String numberCheckResult;
+    public static void numberCheck(int a){
         if (a >=0) {
-            numberCheckResult = " - является числом положительным;";
+            System.out.println(a + " - является числом положительным;");
         } else {
-            numberCheckResult = " - является числом отрицательным;";
+            System.out.println(a + " - является числом отрицательным;");
         }
-        return a + numberCheckResult;
     }
 
     public static boolean numberCheckBool(int a){
