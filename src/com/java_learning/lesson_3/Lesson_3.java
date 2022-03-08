@@ -3,6 +3,7 @@ package com.java_learning.lesson_3;
 import java.util.Arrays;
 
 public class Lesson_3 {
+
     public static void main(String[] args) {
         arrayExample();
         System.out.println();
@@ -23,8 +24,8 @@ public class Lesson_3 {
         System.out.println();
         System.out.println("Сумма правой и левой части массива равны: " + comparisonArray());
         System.out.println();
-        System.out.println("Массим со смещением: ");
-        arrayOffset(new int[]{1, 3, 4, 5, 6}, 1);
+        System.out.println("Массив со смещением: ");
+        arrayOffset(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, -3);
     }
 
     public static void arrayExample() {
@@ -106,10 +107,50 @@ public class Lesson_3 {
         return firstResult == secondResult;
     }
 
-    public static void arrayOffset(int[] data, int pos){
-        for (int i = 0; i < data.length; i++){
-            System.out.print(data[i] + "  ");
+    public static void arrayOffset(int[] data, int pos) {
+        System.out.println("Первоначальный массив: ");
+        arrayOffsetPrint(data);
+        System.out.println();
+        int k = 0;
+        while (k < data.length - 1) {
+            System.out.println("#" + (k + 1) + " вывод, смещение на " + pos + " позици(и|ю|й): ");
+            if (pos > 0) {
+                arrayOffsetRight(data, pos);
+            } else if (pos < 0) {
+                arrayOffsetLeft(data, pos);
+            }
+            arrayOffsetPrint(data);
             System.out.println();
+            k++;
+        }
+    }
+
+    public static void arrayOffsetPrint(int[] data){
+        for (int i = 0; i < data.length; i++) {
+            System.out.print(data[i] + "  ");
+        }
+        System.out.println();
+    }
+
+    public static void arrayOffsetRight(int[] data, int pos){
+        for (int i = 0; i < pos; i++) {
+            int temp = data[0];
+            data[0] = data[data.length - 1];
+            for (int j = 1; j < data.length-1; j++){
+                data[data.length - j] = data[data.length - j - 1];
+            }
+            data[1] = temp;
+        }
+    }
+
+    public static void arrayOffsetLeft(int[] data, int pos){
+        for (int i = 0; i > pos; i--) {
+            int temp = data[data.length - 1];
+            data[data.length - 1] = data[0];
+            for (int j = 1; j < data.length-1; j++){
+                data[j - 1] = data[j];
+            }
+            data[data.length - 2] = temp;
         }
     }
 
