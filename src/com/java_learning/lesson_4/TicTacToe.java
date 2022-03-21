@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public class TicTacToe {
 
-    private static final int SIZE = 3;
+    private static final int SIZE = 7;
+    private static final char DOTS_TO_WIN = 4;
     private static final char DOT_X = 'X';
     private static final char DOT_O = 'O';
     private static final char DOT_EMPTY = '\u2022';
@@ -55,7 +56,7 @@ public class TicTacToe {
         Scanner scanner = new Scanner(System.in);
 
         do {
-            System.out.println("Введите координаты в формате X Y");
+            System.out.println("Введите поочередно координаты хода:");
             System.out.print("Введите координату X: ");
             x = scanner.nextInt() - 1;
             System.out.print("Введите координату Y: ");
@@ -76,28 +77,50 @@ public class TicTacToe {
     }
 
     private static boolean isWin(char symbol) {
+        if (checkLineAndColumn(symbol)) {
+            return true;
+        } else {
+            return checkDiagonal(symbol);
+        }
+    }
 
+    private static boolean checkLineAndColumn(char symbol) {
         for (int i = 0; i < SIZE; i++) {
+            int rowCount = 0;
+            int colCount = 0;
             for (int j = 0; j < SIZE; j++) {
-//                Проверка диагоналей
+                if (MAP[j][i] == symbol) {
+                    rowCount++;
+                } else {
+                    rowCount = 0;
+                }
                 if (MAP[i][j] == symbol) {
+                    colCount++;
+                } else {
+                    colCount = 0;
+                }
+                if (rowCount == DOTS_TO_WIN || colCount == DOTS_TO_WIN) {
                     return true;
                 }
             }
         }
+        return false;
+    }
 
-//        https://vc.ru/dev/141885-poznaem-osnovy-java-i-sozdaem-krestiki-noliki
-//        if (MAP[0][0] == symbol && MAP[0][1] == symbol && MAP[0][2] == symbol) return true; // проверили строки
-//        if (MAP[1][0] == symbol && MAP[1][1] == symbol && MAP[1][2] == symbol) return true; // проверили строки
-//        if (MAP[2][0] == symbol && MAP[2][1] == symbol && MAP[2][2] == symbol) return true; // проверили строки
-//
-//        if (MAP[0][0] == symbol && MAP[1][0] == symbol && MAP[2][0] == symbol) return true; // проверили столбцы
-//        if (MAP[0][1] == symbol && MAP[1][1] == symbol && MAP[2][1] == symbol) return true; // проверили столбцы
-//        if (MAP[0][2] == symbol && MAP[1][2] == symbol && MAP[2][2] == symbol) return true; // проверили столбцы
-//
-//        if (MAP[0][0] == symbol && MAP[1][1] == symbol && MAP[2][2] == symbol) return true; // проверили диагональ
-//        if (MAP[0][2] == symbol && MAP[1][1] == symbol && MAP[2][0] == symbol) return true; // проверили диагональ
-
+    private static boolean checkDiagonal(char symbol) {
+        int mainDiagonal = 0;
+        int saidDiagonal = 0;
+        for (int i = 0; i < SIZE; i++) {
+            if (MAP[i][i] == symbol) {
+                mainDiagonal++;
+            }
+            if (MAP[i][MAP.length - 1 - i] == symbol) {
+                saidDiagonal++;
+            }
+            if (mainDiagonal == DOTS_TO_WIN || saidDiagonal == DOTS_TO_WIN) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -105,7 +128,7 @@ public class TicTacToe {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 if (MAP[i][j] == DOT_EMPTY) {
-                    return false; // когда найдена пустая ячейка, значит можно ещё ходить.
+                    return false;
                 }
             }
         }
@@ -117,7 +140,7 @@ public class TicTacToe {
         int y;
         Random random = new Random();
         do {
-            x = random.nextInt(SIZE); // SIZE не включительно
+            x = random.nextInt(SIZE);
             y = random.nextInt(SIZE);
             System.out.println("Компьютер подобрал координаты: X: " + x + " и Y: " + y);
         } while (MAP[x][y] != DOT_EMPTY);
@@ -138,9 +161,9 @@ public class TicTacToe {
     private static void printHeader() {
         for (int i = 0; i <= SIZE; i++) {
             if (i == 0) {
-                System.out.print("  ");
+                System.out.print("   ");
             } else {
-                System.out.print(i + " ");
+                System.out.print(i + "  ");
             }
         }
         System.out.println();
@@ -148,9 +171,9 @@ public class TicTacToe {
 
     private static void printBody() {
         for (int i = 0; i < SIZE; i++) {
-            System.out.print((i + 1) + " ");
+            System.out.print((i + 1) + "  ");
             for (int j = 0; j < SIZE; j++) {
-                System.out.print(MAP[i][j] + " ");
+                System.out.print(MAP[i][j] + "  ");
             }
             System.out.println();
         }
