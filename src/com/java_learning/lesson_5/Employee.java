@@ -56,10 +56,6 @@ public class Employee {
         this.phoneNumber = phoneNumber;
     }
 
-    public Employee(){
-
-    }
-
     public Employee(String fio, String position, String email, int age, int wages, String phoneNumber){
         this.fio = fio;
         this.position = position;
@@ -69,8 +65,7 @@ public class Employee {
         this.phoneNumber = phoneNumber;
     }
 
-    @Override
-    public String toString() {
+    public String printCardEmployee() {
         return  "fio='" + fio + '\'' +
                 ", position='" + position + '\'' +
                 ", email='" + email + '\'' +
