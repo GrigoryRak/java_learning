@@ -1,6 +1,6 @@
 package com.java_learning.lesson_6;
 
-public class Cat extends Animals{
+public class Cat extends Animals {
 
     private int checkSkillRun;
     private int checkSkillSwim;
@@ -36,6 +36,7 @@ public class Cat extends Animals{
             return getAnimalName() + " не умеет бегать.";
         } else return "Введите корректную дистанцию от 1 до " + getSkillRun();
     }
+
 
     public String printCatSwim() {
         if (checkSkillSwim > 0 && checkSkillSwim <= getSkillSwim()) {

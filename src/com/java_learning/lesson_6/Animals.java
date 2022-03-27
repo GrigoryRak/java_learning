@@ -1,11 +1,11 @@
 package com.java_learning.lesson_6;
 
 public class Animals {
-    protected String animalName;
-    protected int skillRun;
-    protected int skillSwim;
+    private final String animalName;
+    private final int skillRun;
+    private final int skillSwim;
 
-    public Animals (String animalName, int skillRun, int skillSwim){
+    public Animals(String animalName, int skillRun, int skillSwim) {
         this.animalName = animalName;
         this.skillRun = skillRun;
         this.skillSwim = skillSwim;
