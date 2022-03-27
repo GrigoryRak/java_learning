@@ -2,45 +2,45 @@ package com.java_learning.lesson_6;
 
 public class Cat extends Animals{
 
-    private int maxSkillRun;
-    private int maxSkillSwim;
+    private int checkSkillRun;
+    private int checkSkillSwim;
 
     public Cat(String animalName, int skillRun, int skillSwim) {
         super(animalName, skillRun, skillSwim);
     }
 
-    public void setMaxSkillRun(int maxSkillRun) {
-        if (maxSkillRun > getSkillRun()) {
+    public void setCheckSkillRun(int checkSkillRun) {
+        if (checkSkillRun > getSkillRun()) {
             printCatRun();
-        } else if (maxSkillRun < 0) {
+        } else if (checkSkillRun < 0) {
             printCatRun();
-        } else if (maxSkillRun == 0 && maxSkillRun == getSkillRun()) {
+        } else if (checkSkillRun == 0 && checkSkillRun == getSkillRun()) {
             printCatRun();
-        } else this.maxSkillRun = maxSkillRun;
+        } else this.checkSkillRun = checkSkillRun;
     }
 
-    public void setMaxSkillSwim(int maxSkillSwim) {
-        if (maxSkillSwim > getSkillSwim()) {
+    public void setCheckSkillSwim(int checkSkillSwim) {
+        if (checkSkillSwim > getSkillSwim()) {
             printCatSwim();
-        } else if (maxSkillSwim < 0) {
+        } else if (checkSkillSwim < 0) {
             printCatSwim();
-        } else if (maxSkillSwim == 0 && maxSkillSwim == getSkillSwim()) {
+        } else if (checkSkillSwim == 0 && checkSkillSwim == getSkillSwim()) {
             printCatSwim();
-        } else this.maxSkillSwim = maxSkillSwim;
+        } else this.checkSkillSwim = checkSkillSwim;
     }
 
     public String printCatRun() {
-        if (maxSkillRun > 0 && maxSkillRun <= getSkillRun()) {
-            return getAnimalName() + " пробежал " + maxSkillRun + " метров.";
-        } else if (maxSkillRun == 0 && maxSkillRun == getSkillRun()) {
+        if (checkSkillRun > 0 && checkSkillRun <= getSkillRun()) {
+            return getAnimalName() + " пробежал " + checkSkillRun + " метров.";
+        } else if (checkSkillRun == 0 && checkSkillRun == getSkillRun()) {
             return getAnimalName() + " не умеет бегать.";
         } else return "Введите корректную дистанцию от 1 до " + getSkillRun();
     }
 
     public String printCatSwim() {
-        if (maxSkillSwim > 0 && maxSkillSwim <= getSkillSwim()) {
-            return getAnimalName() + " проплыл " + maxSkillSwim + " метров.";
-        } else if (maxSkillSwim == 0 && maxSkillSwim == getSkillSwim()) {
+        if (checkSkillSwim > 0 && checkSkillSwim <= getSkillSwim()) {
+            return getAnimalName() + " проплыл " + checkSkillSwim + " метров.";
+        } else if (checkSkillSwim == 0 && checkSkillSwim == getSkillSwim()) {
             return getAnimalName() + " не умеет плавать.";
         } else return "Введите корректную дистанцию от 1 до " + getSkillSwim();
     }

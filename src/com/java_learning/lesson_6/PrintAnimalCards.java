@@ -12,25 +12,31 @@ public class PrintAnimalCards {
 
 //        Animals[] animalArray = new Animals[10];
 
-        Cat catTom = new Cat("Tom", 0, 0);
-//        Cat catJerry = new Cat("Jerry", "Swim", "Yes", 5);
-//        Cat catMax = new Cat("Max", "Swim", "No", 0);
-//        Cat catAlex = new Cat("Alex", "Run", "Yes", 50);
-//        Cat catCat = new Cat("Cat", "Run", "Yes", 60);
-//        Dog dogSharik = new Dog("Sharick", "Swim", "Yes", 300);
-//        Dog dogBobik = new Dog("Bobik", "Run", "No", 0);
-//        Dog dogFredy = new Dog("Fredy", "Swim", "No", 0);
-//        Dog dogIvan = new Dog("Ivan", "Run", "Yes", 500);
-//        Dog dogShrek = new Dog("Shrek", "Swim", "Yes", 600);
+        Cat catTom = new Cat("Tom", 50, 0);
+        Cat catJerry = new Cat("Jerry", 100, 50);
+        Cat catMax = new Cat("Max", 0, 20);
+        Dog dogSharik = new Dog("Sharick",500, 200);
+        Dog dogBobik = new Dog("Bobik",  0, 10);
+        Dog dogFredy = new Dog("Fredy", 700, 600);
 
 
         System.out.println(catTom.printAnimalCard());
+        System.out.println("------ Кошки------");
         System.out.println("------ Тестирование животного на бег------");
-        catTom.setMaxSkillRun(12);
+        catTom.setCheckSkillRun(10);
         System.out.println(catTom.printCatRun());
         System.out.println("------ Тестирование животного на заплыв------");
-        catTom.setMaxSkillSwim(1);
+        catTom.setCheckSkillSwim(0);
         System.out.println(catTom.printCatSwim());
+
+        System.out.println();
+        System.out.println("------ Собаки------");
+        System.out.println("------ Тестирование животного на бег------");
+        dogSharik.setCheckSkillRun(10);
+        System.out.println(dogSharik.printDogRun());
+        System.out.println("------ Тестирование животного на заплыв------");
+        dogSharik.setCheckSkillSwim(1);
+        System.out.println(dogSharik.printDogSwim());
 
     }
 
