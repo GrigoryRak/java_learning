@@ -37,7 +37,6 @@ public class Cat extends Animals {
         } else return "Введите корректную дистанцию от 1 до " + getSkillRun();
     }
 
-
     public String printCatSwim() {
         if (checkSkillSwim > 0 && checkSkillSwim <= getSkillSwim()) {
             return getAnimalName() + " проплыл " + checkSkillSwim + " метров.";

@@ -5,7 +5,7 @@ public class PrintAnimalCards {
     public static void main(String[] args) {
 
         Cat catTom = new Cat("Tom", 50, 0);
-        Dog dogSharik = new Dog("Sharick",500, 200);
+        Dog dogSharik = new Dog("Sharick", 500, 200);
 
         System.out.println(catTom.printAnimalCard());
         System.out.println("------ Кошки------");
@@ -13,7 +13,7 @@ public class PrintAnimalCards {
         catTom.setCheckSkillRun(10);
         System.out.println(catTom.printCatRun());
         System.out.println("------ Тестирование животного на заплыв------");
-        catTom.setCheckSkillSwim(0);
+        catTom.setCheckSkillSwim(1);
         System.out.println(catTom.printCatSwim());
 
         System.out.println();
