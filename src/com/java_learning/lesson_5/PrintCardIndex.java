@@ -15,7 +15,7 @@ public class PrintCardIndex {
         System.out.println(employee_4.printCardEmployee());
         System.out.println(employee_5.printCardEmployee());
 
-        System.out.println("Сотрудники старше 40 лет: ");
+        System.out.println("Сотрудник старше 40 лет: ");
 
         Employee[] employeeArray = new Employee[5];
         employeeArray[0] = employee_1;
