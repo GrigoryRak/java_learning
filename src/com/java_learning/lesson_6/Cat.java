@@ -16,7 +16,9 @@ public class Cat extends Animals {
             printCatRun();
         } else if (checkSkillRun == 0 && checkSkillRun == getSkillRun()) {
             printCatRun();
-        } else this.checkSkillRun = checkSkillRun;
+        } else {
+            this.checkSkillRun = checkSkillRun;
+        }
     }
 
     public void setCheckSkillSwim(int checkSkillSwim) {
@@ -26,11 +28,13 @@ public class Cat extends Animals {
             printCatSwim();
         } else if (checkSkillSwim == 0 && checkSkillSwim == getSkillSwim()) {
             printCatSwim();
-        } else this.checkSkillSwim = checkSkillSwim;
+        } else {
+            this.checkSkillSwim = checkSkillSwim;
+        }
     }
 
     public String printCatRun() {
-        if (checkSkillRun > 0 && checkSkillRun <= getSkillRun()) {
+        if (checkSkillRun >= 0 && checkSkillRun <= getSkillRun()) {
             return getAnimalName() + " пробежал " + checkSkillRun + " метров.";
         } else if (checkSkillRun == 0 && checkSkillRun == getSkillRun()) {
             return getAnimalName() + " не умеет бегать.";
@@ -38,7 +42,7 @@ public class Cat extends Animals {
     }
 
     public String printCatSwim() {
-        if (checkSkillSwim > 0 && checkSkillSwim <= getSkillSwim()) {
+        if (checkSkillSwim >= 0 && checkSkillSwim <= getSkillSwim()) {
             return getAnimalName() + " проплыл " + checkSkillSwim + " метров.";
         } else if (checkSkillSwim == 0 && checkSkillSwim == getSkillSwim()) {
             return getAnimalName() + " не умеет плавать.";

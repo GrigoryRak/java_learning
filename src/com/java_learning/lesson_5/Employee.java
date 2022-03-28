@@ -8,6 +8,15 @@ public class Employee {
     private int wages;
     private String phoneNumber;
 
+    public Employee(String fio, String position, String email, int age, int wages, String phoneNumber){
+        this.fio = fio;
+        this.position = position;
+        this.email = email;
+        this.age = age;
+        this.wages = wages;
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getFio() {
         return fio;
     }
@@ -53,15 +62,6 @@ public class Employee {
     }
 
     public void setPhoneNumber(String phoneNumber){
-        this.phoneNumber = phoneNumber;
-    }
-
-    public Employee(String fio, String position, String email, int age, int wages, String phoneNumber){
-        this.fio = fio;
-        this.position = position;
-        this.email = email;
-        this.age = age;
-        this.wages = wages;
         this.phoneNumber = phoneNumber;
     }
 
