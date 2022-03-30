@@ -5,6 +5,5 @@ public class Cats extends Animals{
     public Cats(int volFoodEaten) {
         super(volFoodEaten);
     }
-
-
+    
 }

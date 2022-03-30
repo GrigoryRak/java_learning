@@ -16,14 +16,12 @@ public class FeedTheCatApp {
         Bowl bowl = new Bowl(150);
 
         System.out.println(cats.printVolFoodEaten());
-        System.out.println(foodBag.printVolFoodBag());
-        System.out.println((bowl.printVolAnimalBowl()));
+        System.out.println(foodBag.infoFullVolFoodBag());
+        System.out.println((bowl.infoFullVolAnimalBowl()));
         System.out.println();
 
-        foodBag.setVolFoodBag(foodBag.getVolFoodBag() - bowl.getVolAnimalBowl());
-        System.out.println(foodBag.printVolFoodBag());
-        bowl.setVolAnimalBowl(bowl.getVolAnimalBowl() - cats.getVolFoodEaten());
-        System.out.println(bowl.printVolAnimalBowl());
-
+        bowl.fillBowlCats(foodBag);
+        System.out.println(bowl.infoBowlFilling());
+        System.out.println(foodBag.infoBalanceVolFoodBag());
     }
 }

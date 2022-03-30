@@ -3,23 +3,24 @@ package com.java_learning.lesson_7;
 public class FoodBag {
     private int volFoodBag;
 
-    public FoodBag (int volFoodBag){
+    public FoodBag(int volFoodBag) {
         this.volFoodBag = volFoodBag;
     }
 
-    public int getVolFoodBag(){
+    public int getVolFoodBag() {
         return volFoodBag;
     }
 
-    public void setVolFoodBag(int volFoodBag){
-        this.volFoodBag = volFoodBag;
+    public void fillBowl(int mount){
+       this.volFoodBag = this.volFoodBag - mount;
     }
 
-        public String printVolFoodBag() {
+    public String infoFullVolFoodBag() {
         return "Объём пакета с кормом составляет " + volFoodBag + " грамм";
     }
 
-    public void infoVolFoodBag(){
-        System.out.println(this);
+    public String infoBalanceVolFoodBag(){
+        return "Остаток корма после кормешки животного " + volFoodBag + " грамм";
     }
+
 }
