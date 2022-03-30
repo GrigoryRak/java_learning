@@ -7,12 +7,12 @@ public class FoodBag {
         this.volFoodBag = volFoodBag;
     }
 
-    public int getVolFoodBag() {
-        return volFoodBag;
-    }
-
     public void fillBowl(int mount){
-       this.volFoodBag = this.volFoodBag - mount;
+        if (this.volFoodBag >= mount || this.volFoodBag == mount){
+            this.volFoodBag = this.volFoodBag - mount;
+        } else {
+            System.out.println("Корма в упаковке меньше, чем необходимо, остаток " + volFoodBag + " грамм");
+        }
     }
 
     public String infoFullVolFoodBag() {
@@ -20,7 +20,7 @@ public class FoodBag {
     }
 
     public String infoBalanceVolFoodBag(){
-        return "Остаток корма после кормешки животного " + volFoodBag + " грамм";
+        return "Остаток корма в мешке после наполнения миски " + volFoodBag + " грамм";
     }
 
 }
