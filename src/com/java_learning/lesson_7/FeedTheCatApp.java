@@ -13,17 +13,17 @@ public class FeedTheCatApp {
     public static void main(String[] arg){
         Cats cats = new Cats(100, "Вася");
         Cats cats2 = new Cats(300, "Барсик");
-        Cats cats3 = new Cats(200, "Фифа");
-        Cats cats4 = new Cats(200, "Кекс");
-        FoodBag foodBag = new FoodBag(0);
-        Bowl bowl = new Bowl(1100);
+        Cats cats3 = new Cats(190, "Фифа");
+        Cats cats4 = new Cats(190, "Кекс");
+        FoodBag foodBag = new FoodBag(510);
+        Bowl bowl = new Bowl(100);
 
         System.out.println(cats.printVolFoodEaten());
         System.out.println(foodBag.infoFullVolFoodBag());
         System.out.println((bowl.infoFullVolAnimalBowl()));
-        System.out.println();
+        System.out.println("------------------------------------------------------------");
 
-        System.out.println(bowl.infoBowlFilling());
+        bowl.fillBowlCats(foodBag);
         cats.eatFoodCat(bowl);
         cats2.eatFoodCat(bowl);
         cats3.eatFoodCat(bowl);

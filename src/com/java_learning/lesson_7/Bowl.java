@@ -11,25 +11,23 @@ public class Bowl {
         return volAnimalBowl;
     }
 
+    //    Пополнение миски
     public void fillBowlCats(FoodBag foodBag) {
-        foodBag.fillBowl(volAnimalBowl);
+        if (foodBag.getVolFoodBag() >= volAnimalBowl) {
+            foodBag.fillBowl(volAnimalBowl);
+        } else {
+            volAnimalBowl = 0;
+            System.out.println("Объем в мешке " + foodBag.getVolFoodBag() + " грамм; Миска пополнена на " + volAnimalBowl + " грамм. Пополни запас корма.");
+        }
     }
 
-    public void mountFoodEaten(int mountFoodEatCat){
-        if (volAnimalBowl >= mountFoodEatCat){
-            volAnimalBowl = volAnimalBowl - mountFoodEatCat;
-        } else {
-            System.out.println("Объём корма в миске не может быть меньше требуемого корма коту");
-        }
+    //    Сколько корма потребляет животное
+    public void mountFoodEaten(int mountFoodEatCat) {
+        volAnimalBowl = volAnimalBowl - mountFoodEatCat;
     }
 
     public String infoFullVolAnimalBowl() {
         return "Миска вмещает " + this.volAnimalBowl + " грамм корма";
-    }
-
-
-    public String infoBowlFilling(){
-        return "Миска наполнена на " + volAnimalBowl + " грамм";
     }
 
 }

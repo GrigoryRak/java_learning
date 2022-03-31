@@ -3,6 +3,7 @@ package com.java_learning.lesson_7;
 public class Cats extends Animals {
 
     private final String name;
+    private boolean satietyLevel;
 
     public Cats(int volFoodEaten, String name) {
         super(volFoodEaten);
@@ -10,13 +11,12 @@ public class Cats extends Animals {
     }
 
     public void eatFoodCat(Bowl bowl) {
-        if(bowl.getVolAnimalBowl() >= super.getVolFoodEaten()){
-            bowl.mountFoodEaten(super.getVolFoodEaten());
-            System.out.println("Кот " + this.name + " съел " + super.getVolFoodEaten() + " грамм, в миске осталось " + bowl.getVolAnimalBowl() + " грамм");
+        if(bowl.getVolAnimalBowl() >= getVolFoodEaten()){
+            bowl.mountFoodEaten(getVolFoodEaten());
+            System.out.println("Кот " + this.name + " съел " + getVolFoodEaten() + " грамм, в миске осталось " + bowl.getVolAnimalBowl() + " грамм");
         } else
         {
             System.out.println("Кот " + this.name + " отсался голодным");
         }
     }
-
 }
