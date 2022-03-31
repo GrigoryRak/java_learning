@@ -17,7 +17,7 @@ public class Bowl {
             foodBag.fillBowl(volAnimalBowl);
         } else {
             volAnimalBowl = 0;
-            System.out.println("Объем в мешке " + foodBag.getVolFoodBag() + " грамм; Миска пополнена на " + volAnimalBowl + " грамм. Пополни запас корма.");
+            System.out.println("Объём пакета с кормом составляет " + foodBag.getVolFoodBag() + " грамм; Миска пополнена на " + volAnimalBowl + " грамм. Пополни запас корма.");
         }
     }
 

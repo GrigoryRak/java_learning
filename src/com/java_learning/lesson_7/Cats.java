@@ -16,7 +16,7 @@ public class Cats extends Animals {
             System.out.println("Кот " + this.name + " съел " + getVolFoodEaten() + " грамм, в миске осталось " + bowl.getVolAnimalBowl() + " грамм");
         } else
         {
-            System.out.println("Кот " + this.name + " отсался голодным");
+            System.out.println("Кот " + this.name + " остался голодным");
         }
     }
 }

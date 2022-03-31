@@ -15,7 +15,7 @@ public class FeedTheCatApp {
         Cats cats2 = new Cats(300, "Барсик");
         Cats cats3 = new Cats(190, "Фифа");
         Cats cats4 = new Cats(190, "Кекс");
-        FoodBag foodBag = new FoodBag(510);
+        FoodBag foodBag = new FoodBag(100);
         Bowl bowl = new Bowl(100);
 
         System.out.println(cats.printVolFoodEaten());
@@ -28,6 +28,5 @@ public class FeedTheCatApp {
         cats2.eatFoodCat(bowl);
         cats3.eatFoodCat(bowl);
         cats4.eatFoodCat(bowl);
-        bowl.fillBowlCats(foodBag);
     }
 }
