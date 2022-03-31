@@ -11,7 +11,4 @@ public class Animals {
         return volFoodEaten;
     }
 
-    public String printVolFoodEaten() {
-        return "Масса пищи, потребляемая животным составялет " + volFoodEaten + " грамм";
-    }
 }

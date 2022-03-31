@@ -11,8 +11,8 @@ public class FoodBag {
         return volFoodBag;
     }
 
-//    Пополнение миски, проверка на корма в мешке
-    public void fillBowl(int mount){
+    //    Пополнение миски, проверка на корма в мешке
+    public void fillBowl(int mount) {
         if (volFoodBag >= mount) {
             volFoodBag = volFoodBag - mount;
         } else {
@@ -20,7 +20,7 @@ public class FoodBag {
         }
     }
 
-//    Объем пакета с кормом
+    //    Объем пакета с кормом
     public String infoFullVolFoodBag() {
         return "Объём пакета с кормом составляет " + volFoodBag + " грамм";
     }
