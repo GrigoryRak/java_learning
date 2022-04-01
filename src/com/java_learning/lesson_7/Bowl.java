@@ -14,7 +14,7 @@ public class Bowl {
         return volAnimalBowl;
     }
 
-    //    Пополнение миски
+    // Проверка полноты миски
     public void fillBowlCats(FoodBag foodBag) {
         if (foodBag.getVolFoodBag() >= volAnimalBowl) {
             foodBag.fillBowl(volAnimalBowl);
@@ -24,21 +24,23 @@ public class Bowl {
         }
     }
 
-    public void addFood(FoodBag foodBag){
+    // Наполнение миски едой, если корма не хватает покушать
+    public void addFood(FoodBag foodBag) {
         Scanner scanner = new Scanner(System.in);
         String response;
         int addFood;
-        int addVolFood;
         System.out.print("Пополнить запас корма? Y / N: ");
         response = scanner.next();
         if (Objects.equals(response, "Y") || Objects.equals(response, "y")) {
             System.out.print("Введите объем добавки: ");
             addFood = scanner.nextInt();
-            addVolFood = foodBag.getVolFoodBag() + addFood;
-            foodBag.setVolFoodBag(addVolFood);
-            foodBag.fillBowl(volAnimalBowl);
-        }
-        else {
+            foodBag.setVolFoodBag(foodBag.getVolFoodBag() + addFood);
+            if (foodBag.getVolFoodBag() >= volAnimalBowl) {
+                foodBag.fillBowl(volAnimalBowl);
+            } else {
+                volAnimalBowl = 0;
+            }
+        } else {
             volAnimalBowl = 0;
         }
     }
