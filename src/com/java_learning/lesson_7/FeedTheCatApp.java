@@ -1,5 +1,7 @@
 package com.java_learning.lesson_7;
 
+import java.util.Scanner;
+
 /**
  * 1. Расширить задачу про котов и тарелки с едой.
  * 2. Сделать так, чтобы в тарелке с едой не могло получиться отрицательного количества еды (например, в миске 10 еды, а кот пытается покушать 15-20).
@@ -11,10 +13,11 @@ package com.java_learning.lesson_7;
 
 public class FeedTheCatApp {
 
-    private static final int COUNT_ANIMALS = 5;
+    private static final int COUNT_ANIMALS = 7;
 
     public static void main(String[] arg) {
-        FoodBag foodBag = new FoodBag(600);
+
+        FoodBag foodBag = new FoodBag(300);
         Bowl bowl = new Bowl(400);
 
         System.out.println(foodBag.infoFullVolFoodBag());
@@ -33,6 +36,7 @@ public class FeedTheCatApp {
             cat.eatFoodCat(bowl);
             System.out.println(cat.printInfoSatiety());
         }
+
     }
 
     private static Cats createCats(int i) {

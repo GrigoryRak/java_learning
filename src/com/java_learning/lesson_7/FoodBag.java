@@ -11,6 +11,10 @@ public class FoodBag {
         return volFoodBag;
     }
 
+    public void setVolFoodBag(int volFoodBag) {
+        this.volFoodBag = volFoodBag;
+    }
+
     //    Пополнение миски, проверка на корма в мешке
     public void fillBowl(int mount) {
         if (volFoodBag >= mount) {
