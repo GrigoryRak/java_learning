@@ -56,9 +56,8 @@ public class ResetBox {
         c.fill = GridBagConstraints.HORIZONTAL;
         c.anchor = GridBagConstraints.PAGE_END;
         c.gridx = 0;
-        c.gridy = 4;       //third row
+        c.gridy = 4;
         pane.add(reset, c);
-
 
         Font font = new Font("Arial", Font.BOLD, 20);
         JLabel counterView = new JLabel(String.valueOf(counter));
@@ -67,8 +66,7 @@ public class ResetBox {
 
         c.insets = new Insets(40, 40, 60, 40);
         pane.add(counterView, c);
-
-
+        
         ActionListener actionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
